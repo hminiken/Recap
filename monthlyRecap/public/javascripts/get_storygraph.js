@@ -1,7 +1,6 @@
+
+
 console.log("Loaded page");
-
-
-
 document.getElementById("get_storygraph").addEventListener('click', async () => {
     console.log("Click!");
     const year = document.getElementById('yearDropdown').value;
@@ -35,8 +34,17 @@ function handleSomeDiv(someDiv) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ read_books })
-        });
-        console.log(response)
+        }).then(response => response.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const booksList = doc.getElementById('books-list');
+          document.getElementById('books-list').innerHTML = "";
+          document.getElementById('books-list').innerHTML = booksList.innerHTML;
+        })
+        .catch(error => console.error('Error:', error));
+
+
 
         // if (!response.ok) {
         //     throw new Error('Network response was not ok');
@@ -46,19 +54,45 @@ function handleSomeDiv(someDiv) {
     }
 }
 
-const observer = new MutationObserver(function (mutations, mutationInstance) {
-    const someDiv = document.getElementById('tsg_book_data_success');
-    if (someDiv) {
-        handleSomeDiv(someDiv);
-        mutationInstance.disconnect();
-    }
-});
+// const observer = new MutationObserver(function (mutations, mutationInstance) {
+//     const someDiv = document.getElementById('tsg_book_data_success');
+//     if (someDiv) {
+//         handleSomeDiv(someDiv);
+//         mutationInstance.disconnect();
+//     }
+// });
 
 
-observer.observe(document, {
-    childList: true,
-    subtree:   true
-});
+// observer.observe(document, {
+//     childList: true,
+//     subtree:   true
+// });
+
+
+  // Function to start observing
+function startObserving() {
+    const observer = new MutationObserver(function (mutations, mutationInstance) {
+        const someDiv = document.getElementById('tsg_book_data_success');
+        if (someDiv) {
+            handleSomeDiv(someDiv);
+            mutationInstance.disconnect();
+            
+            // Wait for a while before reconnecting
+            setTimeout(() => {
+                console.log('Reconnecting observer...');
+                startObserving(); // Restart observing
+            }, 1000); // Wait for 1 second before reconnecting
+        }
+    });
+
+    observer.observe(document, {
+        childList: true,
+        subtree: true
+    });
+}
+
+// Initial call to start observing
+startObserving();
 
 
 document.getElementById('get_books').addEventListener('click', async () => {
@@ -96,6 +130,97 @@ document.getElementById('get_books').addEventListener('click', async () => {
     }
 });
 
+// function download(canvas, filename) {
+//     const data = canvas.toDataURL("image/png;base64");
+//     const donwloadLink = document.querySelector("#download");
+//     donwloadLink.download = filename;
+//     donwloadLink.href = data;
+//   }
+  function download(url){
+    var a = $("<a style='display:none' id='js-downloder'>")
+    .attr("href", url)
+    .attr("download", "test.png")
+    .appendTo("body");
+  
+    a[0].click();
+  
+    a.remove();
+  }
+document.getElementById('save_image').addEventListener('click', async () => {
+    console.log("Get Image");
+    div = document.getElementById("books-list");
+    // try {
+    //     const response = await fetch('/screenshot');
+    //     if (response.ok) {
+    //         console.log("OK")
+    //       const blob = await response.blob();
+    //       const url = window.URL.createObjectURL(blob);
+    //       const a = document.createElement('a');
+    //       a.style.display = 'none';
+    //       a.href = url;
+    //       a.download = 'main-content.png';
+    //       document.body.appendChild(a);
+    //       a.click();
+    //       window.URL.revokeObjectURL(url);
+    //     } else {
+    //       console.error('Failed to fetch screenshot');
+    //     }
+    //   } catch (error) {
+    //     console.error('Error:', error);
+    //   }
+
+        content = document.getElementById("image_container").outerHTML;
+        const response = fetch('/send-content', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ content: content })
+        })
+        .then(response => response.json())
+            .then(data => {
+                if (data.redirectUrl) {
+                    window.location.href = data.redirectUrl;
+                }
+            });
+
+
+
+        // if (!response.ok) {
+        //     throw new Error('Network response was not ok');
+        // }
+
+        // const data = await response.json();
+    });
+
+// html2canvas(div, {allowTaint : true,
+//     useCORS: true}).then(canvas => {
+//     // document.body.appendChild(canvas)
+//     download(canvas.toDataURL("image/png"));
+// });
+
+// domtoimage.toPng(div, {allowTaint : true,
+//     //     useCORS: true})
+//     .then(function (dataUrl) {
+//         var img = new Image();
+//         img.src = dataUrl;
+//         document.body.appendChild(img);
+//     })
+//     .catch(function (error) {
+//         console.error('oops, something went wrong!', error);
+//     });
+
+      
+// modernScreenshot.domToPng(div, {
+//     fetch: {
+//       // see https://developer.mozilla.org/en-US/docs/Web/API/fetch
+//       requestInit: {
+//         mode: 'cors',
+//       }
+//     }
+//   }).then(dataURL => {
+//     open().document.write(`<img src="${ dataURL }" />`)
+//   })
 
 
 

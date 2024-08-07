@@ -8,13 +8,17 @@
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "dom-to-image": "^2.6.0",
     "ejs": "^3.1.10",
     "express": "~4.16.1",
+    "html2canvas": "^1.4.1",
+    "html2canvas-proxy": "^1.0.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "node-fetch": "^3.3.2",
     "path": "^0.12.7",
-    "pug": "2.0.0-beta11"
+    "pug": "2.0.0-beta11",
+    "puppeteer": "^22.15.0"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.4"
