@@ -1,127 +1,434 @@
-
 <!doctype html>
 <html>
-  <%- include('./templates/head'); %>
+<%- include('./templates/head'); %>
+
   <body>
     <main>
-  <nav class="nav">
-    <div class="navbar">
-      <div class="logo-container">
-        <a class="nav-link" href="#">
-          <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 490 490" style="enable-background:new 0 0 490 490;" xml:space="preserve" class="logo" width="25px" height="25px">
+      <nav class="nav">
+        <div class="navbar">
+          <div class="logo-container">
+            <a class="nav-link" href="#">
+              <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                id="Capa_1" x="0px" y="0px" viewBox="0 0 490 490" style="enable-background:new 0 0 490 490;"
+                xml:space="preserve" class="logo" width="25px" height="25px">
 
-		<path d="M0,167.85v216.2c0,33,26.8,59.8,59.8,59.8h370.4c33,0,59.8-26.8,59.8-59.8v-216.2c0-31.4-25.5-56.9-56.9-56.9h-79.6    l-1.9-8.3c-7.7-33.3-37-56.5-71.2-56.5h-70.9c-34.1,0-63.4,23.2-71.2,56.5l-1.9,8.3H56.9C25.5,110.95,0,136.55,0,167.85z     M146.2,135.45c5.7,0,10.6-3.9,11.9-9.5l4.1-17.8c5.2-22.1,24.6-37.5,47.3-37.5h70.9c22.7,0,42.1,15.4,47.3,37.5l4.1,17.8    c1.3,5.5,6.2,9.5,11.9,9.5H433c17.9,0,32.4,14.5,32.4,32.4v216.2c0,19.5-15.8,35.3-35.3,35.3H59.8c-19.5,0-35.3-15.8-35.3-35.3    v-216.2c0-17.9,14.5-32.4,32.4-32.4H146.2z"></path>
-		<circle cx="82.9" cy="187.75" r="16.4"></circle>
-		<path d="M245,380.95c56.7,0,102.9-46.2,102.9-102.9s-46.2-102.9-102.9-102.9s-102.9,46.1-102.9,102.9S188.3,380.95,245,380.95z     M245,199.65c43.2,0,78.4,35.2,78.4,78.4s-35.2,78.4-78.4,78.4s-78.4-35.2-78.4-78.4S201.8,199.65,245,199.65z"></path>
+                <path
+                  d="M0,167.85v216.2c0,33,26.8,59.8,59.8,59.8h370.4c33,0,59.8-26.8,59.8-59.8v-216.2c0-31.4-25.5-56.9-56.9-56.9h-79.6    l-1.9-8.3c-7.7-33.3-37-56.5-71.2-56.5h-70.9c-34.1,0-63.4,23.2-71.2,56.5l-1.9,8.3H56.9C25.5,110.95,0,136.55,0,167.85z     M146.2,135.45c5.7,0,10.6-3.9,11.9-9.5l4.1-17.8c5.2-22.1,24.6-37.5,47.3-37.5h70.9c22.7,0,42.1,15.4,47.3,37.5l4.1,17.8    c1.3,5.5,6.2,9.5,11.9,9.5H433c17.9,0,32.4,14.5,32.4,32.4v216.2c0,19.5-15.8,35.3-35.3,35.3H59.8c-19.5,0-35.3-15.8-35.3-35.3    v-216.2c0-17.9,14.5-32.4,32.4-32.4H146.2z">
+                </path>
+                <circle cx="82.9" cy="187.75" r="16.4"></circle>
+                <path
+                  d="M245,380.95c56.7,0,102.9-46.2,102.9-102.9s-46.2-102.9-102.9-102.9s-102.9,46.1-102.9,102.9S188.3,380.95,245,380.95z     M245,199.65c43.2,0,78.4,35.2,78.4,78.4s-35.2,78.4-78.4,78.4s-78.4-35.2-78.4-78.4S201.8,199.65,245,199.65z">
+                </path>
 
-</svg>
+              </svg>
 
-        </a>
-        <a class="nav-link" href="#">
-          <h2 class="logo-text">Album</h2>
-        </a>
-      </div>
-      <div class="menu-container">
-        <a class="nav-link" href="#">
-          <h2 class="menu-icon">&#8801;</h2>
-        </a>
-      </div>
-    </div>
-  </nav>
-  <article>
-    <div class="heading">
-      <p class="heading-title">Album Example</p>
-      <div class="heading-text">
-        Something short and leading about
-        the collection below—its <br/> contents,
-        the creator, etc. Make it short and sweet,
-        but not too short <br/> so folks don’t simply skip over it entirely.
-      </div>
-      <div>
-        <select id="yearDropdown">
-            <option value="">Select Year</option>
-            <option value="2022">2022</option>
-            <option value="2023">2023</option>
-            <option value="2024">2024</option>
-        </select>
-        <select id="monthDropdown">
-            <option value="">Select Month</option>
-            <option value="1">January</option>
-            <option value="2">February</option>
-            <option value="3">March</option>
-            <option value="4">April</option>
-            <option value="5">May</option>
-            <option value="6">June</option>
-            <option value="7">July</option>
-            <option value="8">August</option>
-            <!-- Add other months as needed -->
-        </select>
-      </div>
-      <div class="header-buttons">
-        <button id="get_books" class="primary-button add-cursor">
-          Get Books
-        </button>
-        <button id="get_storygraph" class="secondary-button add-cursor">
-          Get Storygraph
-        </button>
-        <button id="save_image" class="secondary-button add-cursor">
-           Save Image<a id="download" href="#"></a>
-          </button>
-        <div style="display: none;" id="storygraph_return_content"></div>
-      </div>
-    </div>
-    
-    <div class="container" id="image_container" >
-        <h1 class="title">TITLE</h1>
-        <h3 class="subtitle">subtitle</h3>
-        <div class="cards" id="books-list" >
-        <% if (books_read && books_read.length > 0) { %>
-        <% for(var i=books_read.length - 1; i >= 0 ; i--) { %>
-            <% console.log(books_read[i]); %>
-        <div class="card">
-            <div class="thumbnail">
-              <img cross-origin="use-credentials" src="<%= books_read[i].cover %>">
-            </div>
-            <div class="caption-container">
-            <div class="card-text">
-                <% if (books_read[i].rating != "") { %>
-                <%= books_read[i].rating %> Stars
-                <% } else {} %>
-            </div>
-            <div class="card-text">
-                <% if (books_read[i].rating != "") { %>
-                    
-              <div class="stars-image place-content-center ">
-                  <img class="star-color" src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Five_Pointed_Star_Solid.svg">
-                  <img class="star-color"  src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Five_Pointed_Star_Solid.svg">
-                  <img class="star-color"  src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Five_Pointed_Star_Solid.svg">
-                  <img class="star-color"  src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Five_Pointed_Star_Solid.svg">
-                  <img class="star-color"  src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Five_Pointed_Star_Solid.svg">
-              </div>
-              <% } else {} %>
-            </div>
-            </div>
-  
+            </a>
+            <a class="nav-link" href="#">
+              <h2 class="logo-text">Album</h2>
+            </a>
           </div>
-          <% } %>
-          <% } else { %>
-          <% } %>
-        
-    </div>
-    </div>
-  </article>
-  <footer class="footer">
-    <p>
-      Album example is © Bootstrap, but please download and customize it for yourself!
+          <div class="menu-container">
+            <a class="nav-link" href="#">
+              <h2 class="menu-icon">&#8801;</h2>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <article>
+        <div class="heading">
+          <p class="heading-title">Album Example</p>
+          <div class="heading-text">
+            Something short and leading about
+            the collection below—its <br /> contents,
+            the creator, etc. Make it short and sweet,
+            but not too short <br /> so folks don’t simply skip over it entirely.
+          </div>
+          <div>
+            Year:
+            <select id="yearDropdown">
+              <option value="">Select Year</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+            </select>
+            <!-- <select id="monthDropdown">
+              <option value="">Select Month</option>
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+            </select> -->
+          </div>
 
-      New to Bootstrap? <a class="footer-link" href="#">Visit the homepage</a> or read our <a class="footer-link" href="#">getting started guide</a>.
-    </p>
-    <a class="back-top footer-link" href="#">Back Top</a>
-  </footer>
-</main>
+
+          <div class="month-buttons">
+            <div class="month-buttons-row">
+
+              <div class="col-md-2">
+                <input id="jan" class="asButton" name="monthCheckbox" type="checkbox" value="1"><label
+                  for="jan">January</label>
+              </div>
+              <div class="col-md-2">
+                <input id="feb" class="asButton" name="monthCheckbox" type="checkbox" value="2"><label
+                  for="feb">February</label>
+              </div>
+              <div class="col-md-2">
+                <input id="mar" class="asButton" name="monthCheckbox" type="checkbox" value="3"><label
+                  for="mar">March</label>
+              </div>
+              <div class="col-md-2">
+                <input id="apr" class="asButton" name="monthCheckbox" type="checkbox" value="4"><label
+                  for="apr">April</label>
+              </div>
+              <div class="col-md-2">
+                <input id="may" class="asButton" name="monthCheckbox" type="checkbox" value="5"><label
+                  for="may">May</label>
+              </div>
+              <div class="col-md-2">
+                <input id="jun" class="asButton" name="monthCheckbox" type="checkbox" value="6"><label
+                  for="jun">June</label>
+              </div>
+
+
+            </div>
+
+            <div class="month-buttons-row">
+              <div class="col-md-2">
+                <input id="jul" class="asButton" name="monthCheckbox" type="checkbox" value="7"><label
+                  for="jul">July</label>
+              </div>
+              <div class="col-md-2">
+                <input id="aug" class="asButton" name="monthCheckbox" type="checkbox" value="8"><label
+                  for="aug">August</label>
+              </div>
+              <div class="col-md-2">
+                <input id="sep" class="asButton" name="monthCheckbox" type="checkbox" value="9"><label
+                  for="sep">September</label>
+              </div>
+              <div class="col-md-2">
+                <input id="oct" class="asButton" name="monthCheckbox" type="checkbox" value="10"><label
+                  for="oct">October</label>
+              </div>
+              <div class="col-md-2">
+                <input id="nov" class="asButton" name="monthCheckbox" type="checkbox" value="11"><label
+                  for="nov">November</label>
+              </div>
+              <div class="col-md-2">
+                <input id="dec" class="asButton" name="monthCheckbox" type="checkbox" value="12"><label
+                  for="dec">December</label>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="header-buttons">
+            <button id="get_books" class="primary-button add-cursor">
+              Get Books
+            </button>
+            <button id="get_storygraph" class="secondary-button add-cursor">
+              Get Storygraph
+            </button>
+            <button id="save_image" class="secondary-button add-cursor">
+              Save Image<a id="download" href="#"></a>
+            </button>
+            <div style="display: none;" id="storygraph_return_content"></div>
+          </div>
+        </div>
+
+        <div class="section-header">
+          <h3>Change Sizing</h3>
+          <h6>Note: You may need to regenerate when you are happy with the layout</h6>
+        </div>
+
+        <div class="collapse-container">
+          <section class="accordion">
+            <input type="checkbox" name="collapse" id="handle1">
+            <h2 class="handle">
+              <label for="handle1">☰ Cover & Rating </label>
+            </h2>
+            <div class="content">
+
+
+
+
+
+              <div class="styling-container">
+                <div class="slidecontainer">
+                  <label>Cover Size</label>
+                  <input type="range" min="1" max="50" value="25" class="slider" id="coverSize">
+                </div>
+                <div class="slidecontainer">
+                  <label>Star Size</label>
+                  <input type="range" min="1" max="50" value="25" class="slider" id="myRange">
+                </div>
+
+
+                <div class="slidecontainer">
+                  <label>Font Size</label>
+                  <input type="range" min="1" max="50" value="25" class="slider" id="fontSize">
+                </div>
+
+                <div>
+                  <div class="btn btn-primary tooltip"><label class="btn btn-primary tooltip">Font Color</label>
+                    <div class="bottom">
+                      <p>Color must be either in hex or RGB format</p>
+                      <i></i>
+                    </div>
+                  </div>
+                  <input type="text">
+                </div>
+
+              </div>
+
+
+            </div>
+          </section>
+
+        </div>
+
+
+
+        <div class="collapse-container">
+          <section class="accordion">
+            <input type="checkbox" name="collapse" id="handle2">
+            <h2 class="handle">
+              <label for="handle2">☰ Font Color & Style</label>
+            </h2>
+            <div class="content">
+              <div class="styling-container">
+
+                <div class="slidecontainer">
+                  <label>Title Size</label>
+                  <input type="range" min="1" max="50" value="25" class="slider" id="titleSize">
+                </div>
+
+                <div class="slidecontainer">
+                  <label>Subtitle Size</label>
+                  <input type="range" min="1" max="50" value="25" class="slider" id="subtitleSize">
+                </div>
+                <div>
+                  <div class="btn btn-primary tooltip"><label class="btn btn-primary tooltip">Title Font Color</label>
+                    <div class="bottom">
+                      <p>Color must be either in hex or RGB format</p>
+                      <i></i>
+                    </div>
+                  </div>
+                  <input type="text">
+                </div>
+                <div>
+                  <div class="btn btn-primary tooltip"><label class="btn btn-primary tooltip">Subtitle Font
+                      Color</label>
+                    <div class="bottom">
+                      <p>Color must be either in hex or RGB format</p>
+                      <i></i>
+                    </div>
+                  </div>
+                  <input type="text">
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+
+
+
+        <div class="collapse-container">
+          <section class="accordion">
+            <input type="checkbox" name="collapse" id="handle3">
+            <h2 class="handle">
+              <label for="handle3">☰ Background Style</label>
+            </h2>
+            <div class="content">
+              <div class="styling-container">
+                <div>
+                  <div class="btn btn-primary tooltip"><label class="btn btn-primary tooltip">Background Image</label>
+                    <div class="bottom">
+                      <p>Image must be a link</p>
+                      <i></i>
+                    </div>
+                  </div>
+                  <input type="url"><button>Apply</button>
+                </div>
+
+                <div>
+                  <div class="btn btn-primary tooltip"><label class="btn btn-primary tooltip">Background Color</label>
+                    <div class="bottom">
+                      <p>Color must be either in hex or RGB format</p>
+                      <i></i>
+                    </div>
+                  </div>
+                  <input type="text">
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+
+
+
+
+        <div class="collapse-container">
+          <section class="accordion">
+            <input type="checkbox" name="collapse" id="handle4">
+            <h2 class="handle">
+              <label for="handle4">☰ Layout</label>
+            </h2>
+            <div class="content">
+
+              <div class="styling-container">
+                <div class="slidecontainer">
+                  <label>Row Gap</label>
+                  <input type="range" min="1" max="50" value="25" class="slider" id="myRange">
+                </div>
+
+                <div class="slidecontainer">
+                  <label>Column Gap</label>
+                  <input type="range" min="1" max="50" value="25" class="slider" id="myRange">
+                </div>
+
+                <div class="slidecontainer">
+                  <label>Outer Margin</label>
+                  <input type="range" min="1" max="50" value="25" class="slider" id="myRange">
+                </div>
+
+                <div>
+                  <div class="btn btn-primary tooltip"><label class="btn btn-primary tooltip">Column Number</label>
+                    <div class="bottom">
+                      <p>Color must be either in hex or RGB format</p>
+                      <i></i>
+                    </div>
+                  </div>
+                  <input type="text" id="columnNumber">
+                </div>
+
+              </div>
+
+
+            </div>
+          </section>
+
+        </div>
+
+
+        <div class="collapse-container">
+          <section class="accordion">
+            <input type="checkbox" name="collapse" id="handle5">
+            <h2 class="handle">
+              <label for="handle5">☰ Info</label>
+            </h2>
+            <div class="content">
+
+              <div class="styling-container">
+            
+
+                <div>
+                  <div class="btn btn-primary tooltip"><label class="btn btn-primary tooltip">StoryGraph</label>
+                    <div class="bottom">
+                      <p>Color must be either in hex or RGB format</p>
+                      <i></i>
+                    </div>
+                  </div>
+                  <input type="checkbox" id="storygraphUID">
+                  <input type="text" id="isStorygraphID">
+                </div>
+
+                <div>
+                  <div class="btn btn-primary tooltip"><label class="btn btn-primary tooltip">GoodReads</label>
+                    <div class="bottom">
+                      <p>Color must be either in hex or RGB format</p>
+                      <i></i>
+                    </div>
+                  </div>
+                  <input type="checkbox" id="goodreadsUID">
+                  <input type="text" id="isGoodreadsID">
+                </div>
+
+              </div>
+
+
+            </div>
+          </section>
+
+        </div>
+
+
+
+
+
+        <div class="container" id="image_container">
+          <h1 class="title">TITLE</h1>
+          <div class="subtitle">
+            <div id="storygraphUsername">
+            <img class="site-logo" src="/images/stars/storygraph.svg">
+            <p >kitaidid</p>
+            </div>
+            <div id="goodreadsUsername">
+            <img class="site-logo" src="/images/stars/goodreads.svg">
+            <p >adsfaddd</p>
+            </div>
+            
+          </div>
+          <div class="cards" id="books-list">
+            <% if (books_read && books_read.length> 0) { %>
+              <% for(var i=books_read.length - 1; i>= 0 ; i--) { %>
+                <div class="card">
+                  <div class="thumbnail">
+                    <img class="cover_image" cross-origin="use-credentials" src="<%= books_read[i].cover %>">
+                  </div>
+                  <div class="book-rating">
+                    <% if (books_read[i].rating !="" ) { %>
+                      <div class="card-text">
+                        <%= books_read[i].rating %> Stars
+                      </div>
+                      <div class="card-text">
+                        <% if (books_read[i].rating !="" ) { %>
+
+                          <div class="stars-image ">
+                            <% const rating_array=(books_read[i].rating).split(".") %>
+                              <% for(var j=0; j <rating_array[0] ; j++) { %>
+                                <img class="star-color" src="/images/stars/full-star.svg">
+                                <% } %>
+                                  <% if (rating_array[1]==25) { %>
+                                    <img class="star-color" src="/images/stars/quarter-star.svg">
+                                    <% } else if (rating_array[1]==5) { %>
+                                      <img class="star-color" src="/images/stars/half-star.svg">
+                                      <% } else if (rating_array[1]==75) { %>
+                                        <img class="star-color" src="/images/stars/three-quarter-star.svg">
+                                        <% } %>
+                          </div>
+                          <% } %>
+                      </div>
+                      <% }%>
+                  </div>
+
+                </div>
+                <% } %>
+                  <% } %>
+          </div>
+        </div>
+      </article>
+      <footer class="footer">
+        <p>
+          Album example is © Bootstrap, but please download and customize it for yourself!
+
+          New to Bootstrap? <a class="footer-link" href="#">Visit the homepage</a> or read our <a class="footer-link"
+            href="#">getting started guide</a>.
+        </p>
+        <a class="back-top footer-link" href="#">Back Top</a>
+      </footer>
+    </main>
   </body>
   <%- include('./templates/foot'); %>
- 
+
 
 </html>

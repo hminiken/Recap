@@ -50,6 +50,11 @@ router.get('/screenshot', async (req, res) => {
   // Launch Puppeteer
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
+  await page.setViewport({
+    width: 1400,
+    height: 2800,
+    deviceScaleFactor: 1
+  });
 
   // Go to the page that generates the content
   await page.goto(url);
