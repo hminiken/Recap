@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+/* * {
+    box-sizing: border-box;
+  }
+  
+  html,body {
+    margin: 0;  
+  } */
+  
+
+  
+
+  /* change the color or image of the background
+    Note: Background image must be of the same ratio or it will be cut off:
+      1080px by 1080px , 1:1 (Square)
+      1080px by 1350px , 16:9 (Portrait)
+  */
+  .recap-background {
+    background: slategray;
+    background-image: url("https://images.unsplash.com/photo-1549213821-4708d624e1d1?fm=jpg&w=3000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8MTYlM0E5fGVufDB8fDB8fHww");
+  }
+  
+
+
+  .attribute-text
+  {
+     /* display: none; */ /*uncomment this to hide the attribute*/
+     color: white;
+     font-size: 24px;
+  }
+ 

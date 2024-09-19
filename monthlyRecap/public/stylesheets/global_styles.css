@@ -1,0 +1,183 @@
+/*    - Footer -    */
+.footer {
+  height: 152px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr .5fr;
+  grid-template-columns: 1fr .5fr;
+  align-items: center;
+  padding: 0 100px 0 100px;
+  opacity: .7;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #0d47a1;
+}
+
+.back-top {
+  text-align: right;
+}
+
+
+/*    -- Navbar --    */
+.nav {
+  background-color: #343a40;
+  height: 56px;
+  display: -ms-grid;
+  display: grid;
+  align-content: center;
+}
+
+.navbar {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 200px;
+  grid-template-columns: 1fr 200px;
+  height: 40px;
+}
+
+.hover-effect {
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.hover-effect:hover {
+  background-color: #54595c;
+  color: white;
+}
+
+
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+.add-cursor:hover {
+  cursor: pointer;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: 'segoe ui';
+}
+
+.nav {
+  height: 50px;
+  width: 100%;
+  background-color: #4d4d4d;
+  position: relative;
+}
+
+.nav>.nav-header {
+  display: inline;
+}
+
+.nav>.nav-header>.nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav>.nav-btn {
+  display: none;
+}
+
+.nav>.nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+}
+
+.nav>.nav-links>a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
+}
+
+.nav>.nav-links>a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav>#nav-check {
+  display: none;
+}
+
+@media (max-width:600px) {
+  .nav>.nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+
+  .nav>.nav-btn>label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+
+  .nav>.nav-btn>label:hover,
+  .nav #nav-check:checked~.nav-btn>label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .nav>.nav-btn>label>span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+
+  .nav>.nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+
+  .nav>.nav-links>a {
+    display: block;
+    width: 100%;
+  }
+
+  .nav>#nav-check:not(:checked)~.nav-links {
+    height: 0px;
+  }
+
+  .nav>#nav-check:checked~.nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+
+.nav-icon {
+  /* I recommend using this codePen to convert a hex code to a filter color:
+    https://codepen.io/sosuke/pen/Pjoqqp
+  */
+  /* filter: invert(65%) sepia(72%) saturate(657%) hue-rotate(5deg) brightness(111%) contrast(107%); */
+  max-height: inherit;
+  height: 1em;
+  margin-right: 5px;
+
+}

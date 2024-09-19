@@ -1,5 +1,5 @@
 
-
+localStorage.clear()
 // console.log("Loaded page");
 // document.getElementById("get_storygraph").addEventListener('click', async () => {
 //     console.log("Click!");
@@ -188,6 +188,52 @@ document.getElementById('columnNumber').addEventListener('input', async () => {
 });
 
 
+// Storygraph and Goodreads Username Subtitle
+showStorygraph = document.getElementById('storygraphUID');
+storygraphSubtitle = document.getElementById('storygraphUsername');
+showStorygraph.addEventListener('change', async () => { 
+    checkSubtitle();
+});
+
+showGoodreads = document.getElementById('goodreadsUID');
+goodreadsSubtitle = document.getElementById('goodreadsUsername');
+showGoodreads.addEventListener('change', async () => { 
+    checkSubtitle();
+});
+
+isStorygraphID = document.getElementById('isStorygraphID');
+isStorygraphID.addEventListener('input', async () => { 
+    storygraphSubtitle.children[1].innerText = isStorygraphID.value
+});
+
+isGoodreadsID = document.getElementById('isGoodreadsID');
+isGoodreadsID.addEventListener('input', async () => { 
+    goodreadsSubtitle.children[1].innerText = isGoodreadsID.value
+});
+
+function checkSubtitle() {
+    if (showStorygraph.checked && showGoodreads.checked) {
+        goodreadsSubtitle.style.setProperty('display', 'flex')
+        storygraphSubtitle.style.setProperty('display', 'flex')
+        goodreadsSubtitle.style.setProperty('justify-content', 'flex-start')
+        storygraphSubtitle.style.setProperty('justify-content', 'flex-end')
+    } else if (showStorygraph.checked) {
+        goodreadsSubtitle.style.setProperty('display', 'none')
+        storygraphSubtitle.style.setProperty('display', 'flex')
+        storygraphSubtitle.style.setProperty('justify-content', 'center')
+    } else if (showGoodreads.checked) {
+        storygraphSubtitle.style.setProperty('display', 'none')
+        goodreadsSubtitle.style.setProperty('display', 'flex')
+        goodreadsSubtitle.style.setProperty('justify-content', 'center')
+    } else {
+        goodreadsSubtitle.style.setProperty('display', 'none')
+        storygraphSubtitle.style.setProperty('display', 'none')
+    }
+}
+
+
+
+
 // storygraphIDinput = document.getElementById('isStorygraphID')
 // document.getElementById('isStorygraphID').addEventListener('input', async () => {    
 //     applyStyle("cards", 'grid-template-columns', 'repeat(' + storygraphIDinput.value + ', 1fr)')  
@@ -200,7 +246,7 @@ document.getElementById('columnNumber').addEventListener('input', async () => {
 
 
 function reapplyStyles() {
-    
+
     applyStyle("cover_image", 'max-width', coverinput.value * 4 + '%')
     applyStyle("thumbnail", 'max-height', coverinput.value * 4 + '%')
     applyStyle("card-text", 'font-size', fontSizeinput.value * 4 + '%')
